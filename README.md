@@ -90,6 +90,6 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 For any questions or feedback, feel free to reach out:
 
 - **GitHub**: [sparsh-verencar](https://github.com/sparsh-verencar)
-- **Website**: [https://cplusplus.com](https://cplusplusapp.netlify.app/)
+- **Website**: [https://team-egghead-portfolio](https://team-egghead-portfolio.vercel.app/)
 
 Thank you for checking out our Portfolio! Happy coding! 🚀
