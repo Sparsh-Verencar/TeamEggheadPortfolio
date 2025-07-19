@@ -31,15 +31,9 @@ export function CommandMenu({ className }) {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Suggestions">
-            <CommandItem>Calendar</CommandItem>
-            <CommandItem>Search Emoji</CommandItem>
-            <CommandItem>Calculator</CommandItem>
-          </CommandGroup>
-          <CommandSeparator />
-          <CommandGroup heading="Settings">
-            <CommandItem>Profile</CommandItem>
-            <CommandItem>Billing</CommandItem>
-            <CommandItem>Settings</CommandItem>
+            <CommandItem>Members</CommandItem>
+            <CommandItem>Projects</CommandItem>
+            <CommandItem>Gmail</CommandItem>
           </CommandGroup>
         </CommandList>
       </CommandDialog>

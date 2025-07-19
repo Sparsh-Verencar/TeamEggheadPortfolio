@@ -31,6 +31,7 @@ const Folder = ({
   size = 1,
   items = [],
   className = "",
+  text = "members"
 }) => {
   const maxItems = 3;
   const papers = items.slice(0, maxItems);
@@ -124,6 +125,7 @@ const Folder = ({
           <div className="folder__front right"></div>
         </div>
       </div>
+      <h6 className="text-white">{text}</h6>
     </div>
   );
 };
