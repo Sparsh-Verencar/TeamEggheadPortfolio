@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Team Egghead Portfolio
 
-## Getting Started
+Your all-in-one hub for C++ tutorials, references, articles, and expert guidance.
 
-First, run the development server:
+## Table of Contents
+- [Introduction](#introduction)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Animations](#animations)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
 
+## Introduction
+A website that showcases our skills as a hackathon team
+
+## Technologies Used
+### Frontend:
+- Next.js(frontend)
+- Tailwind CSS(styling)
+- Framer Motion (for animations)
+- Shadcn(ui library)
+- Aceternity(ui library)
+- React bits(ui library)
+
+### Icons:
+- Custom SVGs
+
+### Deployment:
+- Netlify
+
+## Installation
+To run this project locally, follow these steps:
+
+### Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+https://github.com/Sparsh-Verencar/TeamEggheadPortfolio
+cd TeamEggheadPortfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Open the app:
+Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+### Animations
+- Enjoy smooth animations when interacting with elements.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
+We welcome contributions! If you'd like to contribute to this project, please follow these steps:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Fork the repository:
+```bash
+git checkout -b feature/your-feature-name
+```
 
-## Deploy on Vercel
+### Commit your changes:
+```bash
+git commit -m "Add your feature"
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Push to the branch:
+```bash
+git push origin feature/your-feature-name
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Open a pull request.
+
+## License
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## Acknowledgements
+- **Framer Motion**: For making animations simple and powerful.
+- **Tailwind CSS**: For enabling rapid and responsive UI development.
+- **React Community**: For the amazing ecosystem and support.
+
+## Contact
+For any questions or feedback, feel free to reach out:
+
+- **GitHub**: [sparsh-verencar](https://github.com/sparsh-verencar)
+- **Website**: [https://team-egghead-portfolio](https://team-egghead-portfolio.vercel.app/)
+
+Thank you for checking out our Portfolio! Happy coding! 🚀
