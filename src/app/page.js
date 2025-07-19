@@ -2,12 +2,20 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import RetroProgressBar from "@/components/RetroProgressBar";
+
+import Gmail from "@/components/Gmail";
+import Folder from "@/components/react_bits/Components/Folder/Folder";
+import WindowTaskBar from "@/components/WindowTaskBar";
+import TargetCursor from "@/components/react_bits/Animations/TargetCursor/TargetCursor";
 import FadingSquare from "@/components/FadingSquare";
+import Loading from "./loading";
+import RetroProgressBar from "@/components/RetroProgressBar";
 
 export default function Home() {
+  const [showContent, setShowContent] = useState(false);
   const [progress, setProgress] = useState(0);
 
+  // For click-chain drawing logic
   const [baseStart, setBaseStart] = useState(null);
   const [baseEnd, setBaseEnd] = useState(null);
   const [isDrawing, setIsDrawing] = useState(false);
@@ -16,14 +24,14 @@ export default function Home() {
   const [viewport, setViewport] = useState({ w: 1920, h: 1080 });
   const containerRef = useRef();
 
-  // Progress bar
+  // Progress bar logic
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev < 80) {
           return prev + 1;
         } else if (prev < 100) {
-          return prev + 0.3; // 🐌 Super slo-mo
+          return prev + 0.3;
         } else {
           return 100;
         }
@@ -33,7 +41,15 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  // Resize
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 7000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Resize viewport for SVG
   useEffect(() => {
     const update = () =>
       setViewport({ w: window.innerWidth, h: window.innerHeight });
@@ -83,7 +99,7 @@ export default function Home() {
     });
   };
 
-  // Download paths on Ctrl+Click
+  // Download
   const downloadTxt = (e) => {
     if (!e.ctrlKey) {
       alert("Hold CTRL while clicking to download.");
@@ -118,18 +134,39 @@ export default function Home() {
     chains.length + (isDrawing ? 1 : 0)
   );
 
+  if (!showContent) {
+    return <Loading />;
+  }
+
   return (
     <div
       ref={containerRef}
-      className="flex flex-col items-center justify-center gap-4 min-h-screen bg-black text-white relative"
+      className="relative w-screen h-screen bg-gray-950 text-white overflow-hidden"
       onClick={handleClick}
       onContextMenu={handleContext}
+      suppressHydrationWarning
     >
-      {/* OG: FadingSquare + ProgressBar */}
-      {/* <FadingSquare progress={progress} />
-      <RetroProgressBar value={progress} className="w-96" /> */}
+      <TargetCursor spinDuration={2} hideDefaultCursor={true} />
 
-      {/* EGGHEAD exact */}
+      {/* Folders & Gmail */}
+      <div className="h-[91vh] flex flex-col items-center justify-around pl-[2vw]">
+        <Folder size={1} color="#F3F708" text="members" className="cursor-target custom-folder" />
+        <Folder size={1} color="#F3F708" text="projects" className="cursor-target custom-folder" />
+        <Folder size={1} color="#F3F708" text="About Team" className="cursor-target custom-folder" />
+        <Gmail />
+      </div>
+
+      {/* Center: Fading Square */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <FadingSquare progress={progress} />
+      </div>
+
+      {/* Optional: Retro Progress */}
+      {/* <div className="absolute top-4 left-4">
+        <RetroProgressBar value={progress} className="w-96" />
+      </div> */}
+
+      {/* Egghead */}
       <div
         className="absolute w-24 h-24 bg-green-500 border border-green-900 flex items-center justify-center text-black"
         style={{
@@ -142,7 +179,7 @@ export default function Home() {
         EGGHEAD
       </div>
 
-      {/* Download Button */}
+      {/* Download */}
       <button
         onClick={downloadTxt}
         className="absolute bottom-4 left-4 bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded"
@@ -150,7 +187,7 @@ export default function Home() {
         Download Paths (CTRL+Click)
       </button>
 
-      {/* SVG lines */}
+      {/* Drawn Lines */}
       <svg
         className="absolute top-0 left-0"
         width="100%"
@@ -175,31 +212,20 @@ export default function Home() {
           const pts = [start, ...chainPts];
           const d = pts.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ");
           return (
-            <path
-              key={idx}
-              d={d}
-              stroke="#00FF00"
-              strokeWidth="2"
-              fill="none"
-            />
+            <path key={idx} d={d} stroke="#00FF00" strokeWidth="2" fill="none" />
           );
         })}
 
-        {/* Current chain */}
+        {/* Current Chain */}
         {isDrawing && currentChain.length > 0 && (() => {
           const start = startPoints[chains.length];
           const pts = [start, ...currentChain];
           const d = pts.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ");
-          return (
-            <path
-              d={d}
-              stroke="#00FF00"
-              strokeWidth="2"
-              fill="none"
-            />
-          );
+          return <path d={d} stroke="#00FF00" strokeWidth="2" fill="none" />;
         })()}
       </svg>
+
+      <WindowTaskBar />
     </div>
   );
 }
