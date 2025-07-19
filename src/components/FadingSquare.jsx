@@ -34,7 +34,7 @@ export default function FadingSquare({ progress }) {
         )`,
         rotate: finalMove ? 55 : 0,
         x: finalMove ? 160 : 0,
-        y: finalMove ? 50 : 0,
+        y: finalMove ? -5 : 0,
         scale: finalMove ? 2.7 : 1,  // 🔑 Keep scale at 1 until final!
       }}
       transition={{
