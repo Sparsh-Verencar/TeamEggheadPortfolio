@@ -51,7 +51,7 @@ const ProfileCardComponent = ({
   className = "",
   enableTilt = true,
   miniAvatarUrl,
-  name = "Javi A. Torres",
+  name = "Shivank",
   title = "Software Engineer",
   handle = "javicodes",
   status = "Online",

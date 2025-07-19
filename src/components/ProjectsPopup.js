@@ -47,7 +47,7 @@ export default function ProjectPopup() {
       drag
       dragMomentum={false}
       dragConstraints={{ top: -100, bottom: 800, left: -100, right: 1000 }}
-      className="fixed top-20 left-3 z-50 p-4 md:p-6 rounded-2xl shadow-2xl border border-gray-200 dark:border-zinc-700 dark:bg-zinc-900 h-120 w-[120vw] md:w-[70vw]"
+      className="fixed top-25 left-70 p-4 md:p-6 rounded-2xl shadow-2xl border border-gray-200 dark:border-zinc-700 dark:bg-zinc-900 h-120 w-[120vw] md:w-[70vw]"
     >
       {/* Background Particles */}
       <div className="relative z-10 flex flex-col space-y-4">
