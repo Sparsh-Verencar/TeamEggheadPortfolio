@@ -8,6 +8,7 @@ import Loading from "./loading";
 
 import { useState, useEffect } from "react";
 import Capacitor from "@/components/Capacitor";
+import Pins from "@/components/Pins";
 
 export default function Home() {
   const [showContent, setShowContent] = useState(false);
@@ -49,6 +50,27 @@ export default function Home() {
         <Folder size={1} color="#F3F708" className="cursor-target custom-folder flex flex-col items-center justify-center" text="About Team" />
         <Gmail />
       </div>
+      // Assuming the faded square is centered with this wrapper
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <Pins className="absolute -left-9"/>
+        <Pins className="absolute -left-4 top-4"/>
+        <Pins className="absolute left-1 top-9"/>
+        <Pins className="absolute left-6 top-13"/>
+        <Pins className="absolute left-11 top-19"/>
+        <Pins className="absolute left-16 top-23"/>
+        <Pins className="absolute left-21 top-29"/>
+        <Pins className="absolute left-26 top-33"/>
+
+        <Pins className="absolute left-32 top-33"/>
+        <Pins className="absolute left-38 top-31"/>
+        <Pins className="absolute left-44 top-29"/>
+        <Pins className="absolute left-50 top-27"/>
+        <Pins className="absolute left-56 top-25"/>
+        <Pins className="absolute left-62 top-23"/>
+        <Pins className="absolute left-68 top-21"/>
+        <Pins className="absolute left-74 top-19"/>
+      </div>
+
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <Capacitor />
         <FadingSquare progress={progress} />

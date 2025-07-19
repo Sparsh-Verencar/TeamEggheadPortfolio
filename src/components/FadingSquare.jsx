@@ -23,7 +23,7 @@ export default function FadingSquare({ progress, classname }) {
 
   return (
     <motion.div
-      className={`w-24 h-24 bg-green-500 border border-green-900 flex items-center justify-center text-black opacity-0 ${classname}`}
+      className={`w-24 h-24 bg-gray-500 border border-green-900 flex items-center justify-center text-black opacity-0 ${classname}`}
       animate={{
         opacity: progress >= 80 ? (progress - 80) / 10 : 0,
         clipPath: `polygon(
@@ -32,9 +32,9 @@ export default function FadingSquare({ progress, classname }) {
           ${100 - shift}% ${100 - shift}%,
           0% 100%
         )`,
-        rotate: finalMove ? 55 : 0,
-        x: finalMove ? 150 : 0,
-        y: finalMove ? 20 : 0,
+        rotate: finalMove ? 57 : 0,
+        x: finalMove ? 140 : 0,
+        y: finalMove ? 35 : 0,
         scale: finalMove ? 2.7 : 1,  // 🔑 Keep scale at 1 until final!
       }}
       transition={{
