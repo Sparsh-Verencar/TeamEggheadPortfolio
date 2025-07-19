@@ -44,16 +44,16 @@ export default function Home() {
   return (
     <div className="relative w-screen h-screen flex items-between justify-between bg-gray-950" suppressHydrationWarning>
       <TargetCursor spinDuration={2} hideDefaultCursor={true} />
-      <div className="h-[91vh] flex flex-col items-center justify-around pl-[2vw]">
+      <div className=" h-[91vh] flex flex-col items-center justify-around pl-[2vw]">
         <Folder size={1} color="#F3F708" className="cursor-target custom-folder flex flex-col items-center justify-center" text="members" />
         <Folder size={1} color="#F3F708" className="cursor-target custom-folder flex flex-col items-center justify-center" text="projects" />
         <Folder size={1} color="#F3F708" className="cursor-target custom-folder flex flex-col items-center justify-center" text="About Team" />
         <Gmail />
       </div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px]">
+      <div className="w-[60vw] h-full">
         <Spline
           scene="https://prod.spline.design/qPvDC6ECtPlXnOaq/scene.splinecode"
-          className="w-full h-full"
+          className="w-10 h-full"
         />
       </div>
       <WindowTaskBar />
