@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-export default function FadingSquare({ progress }) {
+export default function FadingSquare({ progress, classname }) {
   const [finalMove, setFinalMove] = useState(false);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function FadingSquare({ progress }) {
 
   return (
     <motion.div
-      className="w-24 h-24 bg-green-500 border border-green-900 flex items-center justify-center text-black opacity-0"
+      className={`w-24 h-24 bg-green-500 border border-green-900 flex items-center justify-center text-black opacity-0 ${classname}`}
       animate={{
         opacity: progress >= 80 ? (progress - 80) / 10 : 0,
         clipPath: `polygon(

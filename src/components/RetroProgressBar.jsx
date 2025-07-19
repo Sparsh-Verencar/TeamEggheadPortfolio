@@ -7,7 +7,7 @@ export default function RetroProgressBar({ value, className }) {
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    if (value >= 100) {
+    if (value >= 90) {
       const timer = setTimeout(() => {
         setHidden(true);
       }, 500); // wait half a second for dramatic effect
