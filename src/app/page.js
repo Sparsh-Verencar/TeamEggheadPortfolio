@@ -149,7 +149,7 @@ export default function Home() {
       </div>
 
       {/* Egghead centered at (640, 320.5) */}
-      <div
+      {/* <div
         className="absolute w-24 h-24 bg-green-500 border border-green-900 flex items-center justify-center text-black"
         style={{
           top: `272.5px`,   // 320.5 - 48
@@ -159,7 +159,7 @@ export default function Home() {
         }}
       >
         EGGHEAD
-      </div>
+      </div> */}
 
       {/* Download button */}
       <button
