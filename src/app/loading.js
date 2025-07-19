@@ -23,7 +23,6 @@ const Loading = () => {
     }, []);
     return (
         <div className='w-screen h-screen bg-gray-950 flex flex-col items-center justify-center'>
-            
             <RetroProgressBar value={progress} className="w-96" />
         </div>
     )

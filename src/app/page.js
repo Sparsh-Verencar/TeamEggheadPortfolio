@@ -5,27 +5,29 @@ import WindowTaskBar from "@/components/WindowTaskBar";
 import TargetCursor from "@/components/react_bits/Animations/TargetCursor/TargetCursor";
 import FadingSquare from "@/components/FadingSquare";
 import Loading from "./loading";
+import Spline from '@splinetool/react-spline';
+
 
 import { useState, useEffect } from "react";
 
 export default function Home() {
   const [showContent, setShowContent] = useState(false);
   const [progress, setProgress] = useState(0);
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setProgress((prev) => {
-                if (prev < 80) {
-                    return prev + 1;
-                } else if (prev < 100) {
-                    return prev + 0.3; // 🐌 Super slo-mo
-                } else {
-                    return 100;
-                }
-            });
-        }, 50);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev < 80) {
+          return prev + 1;
+        } else if (prev < 100) {
+          return prev + 0.3; // 🐌 Super slo-mo
+        } else {
+          return 100;
+        }
+      });
+    }, 50);
 
-        return () => clearInterval(interval);
-    }, []);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -48,10 +50,12 @@ export default function Home() {
         <Folder size={1} color="#F3F708" className="cursor-target custom-folder flex flex-col items-center justify-center" text="About Team" />
         <Gmail />
       </div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <FadingSquare progress={progress} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px]">
+        <Spline
+          scene="https://prod.spline.design/qPvDC6ECtPlXnOaq/scene.splinecode"
+          className="w-full h-full"
+        />
       </div>
-
       <WindowTaskBar />
     </div>
   );
