@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 import Gmail from "@/components/Gmail";
-import Folder from "@/components/react_bits/Components/Folder/Folder";
+import Folder from "@/components/react_bits/components/Folder/Folder.jsx";
 import WindowTaskBar from "@/components/WindowTaskBar";
 import TargetCursor from "@/components/react_bits/Animations/TargetCursor/TargetCursor";
 import FadingSquare from "@/components/FadingSquare";
