@@ -12,7 +12,8 @@ export default function Home() {
         hideDefaultCursor={true}
       />
       <div className="h-[91vh] flex flex-col items-center justify-around pl-[2vw]">
-        <Folder size={1} color="#F3F708" className="cursor-target custom-folder flex flex-col items-center justify-center" text="members" />
+        <Folder size={1} color="#F3F708" className="cursor-target custom-folder flex flex-col items-center justify-center" text="members" 
+        />
         <Folder size={1} color="#F3F708" className="cursor-target custom-folder flex flex-col items-center justify-center" text="projects" />
         <Folder size={1} color="#F3F708" className="cursor-target custom-folder flex flex-col items-center justify-center" text="About Team" />
         <Gmail />

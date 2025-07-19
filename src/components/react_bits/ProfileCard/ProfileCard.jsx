@@ -256,12 +256,12 @@ const getFallbackImage = (seed) =>
   }, [onContactClick]);
 
   return (
-    <div
-      ref={wrapRef}
-      className={`pc-card-wrapper ${className}`.trim()}
-      style={cardStyle}
-    >
-      <section ref={cardRef} className="pc-card">
+   <div
+  ref={wrapRef}
+  className={`pc-card-wrapper scale-75 sm:scale-105 ${className}`.trim()}
+  style={cardStyle}
+>
+      <section ref={cardRef} className="pc-card ">
         <div className="pc-inside">
        
           <div className="pc-glare" />
