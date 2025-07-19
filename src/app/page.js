@@ -5,10 +5,9 @@ import WindowTaskBar from "@/components/WindowTaskBar";
 import TargetCursor from "@/components/react_bits/Animations/TargetCursor/TargetCursor";
 import FadingSquare from "@/components/FadingSquare";
 import Loading from "./loading";
-import Spline from '@splinetool/react-spline';
-
 
 import { useState, useEffect } from "react";
+import Capacitor from "@/components/Capacitor";
 
 export default function Home() {
   const [showContent, setShowContent] = useState(false);
@@ -29,17 +28,17 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowContent(true);
-    }, 7000); // Match your loading duration
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowContent(true);
+  //   }, 7000); // Match your loading duration
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
-  if (!showContent) {
+  /* if (!showContent) {
     return <Loading />; // Show animation while waiting
-  }
+  } */
 
   return (
     <div className="relative w-screen h-screen flex items-between justify-between bg-gray-950" suppressHydrationWarning>
@@ -50,12 +49,11 @@ export default function Home() {
         <Folder size={1} color="#F3F708" className="cursor-target custom-folder flex flex-col items-center justify-center" text="About Team" />
         <Gmail />
       </div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px]">
-        <Spline
-          scene="https://prod.spline.design/qPvDC6ECtPlXnOaq/scene.splinecode"
-          className="w-full h-full"
-        />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <Capacitor />
+        <FadingSquare progress={progress} />
       </div>
+
       <WindowTaskBar />
     </div>
   );
