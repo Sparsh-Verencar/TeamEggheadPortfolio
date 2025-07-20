@@ -100,7 +100,6 @@ const Folder = ({
       <div
         className={folderClassName}
         style={folderStyle}
-        onClick={handleClick}
       >
         <div className="folder__back">
           {papers.map((item, i) => (

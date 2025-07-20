@@ -48,7 +48,7 @@ export default function DraggablePopup() {
       drag
       dragMomentum={false}
       dragConstraints={{ top: -100, bottom: 800, left: -100, right: 1000 }}
-      className="fixed top-10 left-60 z-50  p-4 md:p-6 rounded-2xl shadow-2xl border border-gray-200 dark:border-zinc-700 dark:bg-zinc-900 overflow-hidden bg-transparent scale-90 sm:scale-75 "
+      className="fixed top-10 left-60 z-50  p-4 md:p-6 rounded-2xl shadow-2xl border border-gray-200 dark:border-zinc-700 dark:bg-zinc-900 overflow-hidden backdrop-blur-2xl scale-90 sm:scale-75 "
     >
       {/* Particles Background */}
       <div className="absolute inset-0 z-0 ">
