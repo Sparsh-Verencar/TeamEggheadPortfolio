@@ -29,7 +29,7 @@ A website that showcases our skills as a hackathon team
 - Custom SVGs
 
 ### Deployment:
-- Netlify
+- Vercel
 
 ## Installation
 To run this project locally, follow these steps:
