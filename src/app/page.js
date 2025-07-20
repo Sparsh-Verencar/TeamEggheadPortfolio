@@ -3,7 +3,6 @@ import Gmail from "@/components/Gmail";
 import Folder from "@/components/react_bits/Components/Folder/Folder";
 import WindowTaskBar from "@/components/WindowTaskBar";
 import TargetCursor from "@/components/react_bits/Animations/TargetCursor/TargetCursor";
-import FadingSquare from "@/components/FadingSquare";
 import Loading from "./loading";
 import Spline from '@splinetool/react-spline';
 import DraggablePopup from "@/components/DraggablePopup";

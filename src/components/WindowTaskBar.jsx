@@ -10,7 +10,6 @@ import {
 const WindowTaskBar = () => {
     return (
         <div className="absolute w-screen h-[9vh] left-0 top-[91vh] flex items-center justify-center bg-white/10 backdrop-blur-md text-white border-t border-white/20 shadow-md gap-4">
-            <CommandMenu />
             <Tooltip>
                 <TooltipTrigger asChild>
                     <div className="relative w-[50px] h-[50px]" onClick={() => { window.close() }}>
@@ -31,24 +30,6 @@ const WindowTaskBar = () => {
                     <p>Wanna Leave? Click here</p>
                 </TooltipContent>
             </Tooltip>
-            <Tooltip>
-                <TooltipTrigger asChild>
-                    <motion.h1
-                        className="bg-white/10 backdrop-blur-md p-3 rounded-2xl border border-white/20"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        ctrl+k
-                    </motion.h1>
-                </TooltipTrigger>
-                <TooltipContent>
-                    <p>Global search</p>
-                </TooltipContent>
-            </Tooltip>
-            {/* ShapeBlur container with Egg positioned inside */}
-
-
-
         </div>
     )
 }
